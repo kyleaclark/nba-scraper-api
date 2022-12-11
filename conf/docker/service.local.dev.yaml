@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  nba-scraper-api:
+    image: nba-scraper-api
+    container_name: nba-scraperapi-local-dev
+    command: ["/app/start.sh"]
+    environment:
+    - APP_ENV=DEV
+    - DEPLOYED_FLAG=False
+    ports:
+      - "8000:8000"

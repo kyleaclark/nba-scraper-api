@@ -1,0 +1,9 @@
+version: '3.7'
+services:
+  nba-scraperapi-testing:
+    image: nba-scraper-api-testing
+    container_name: nba-scraperapi-testing-dev
+    command: ["/app/test_runner.sh"]
+    environment:
+    - APP_ENV=DEV
+    - DEPLOYED_FLAG=False

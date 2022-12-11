@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  nba-scraper-api:
+    image: nba-scraper-api
+    healthcheck:
+      test: ["CMD", "curl", "-f", "127.0.0.1:8000/api/v1/liveness"]
+      interval: 30s
+      timeout: 15s
+      retries: 3
+      start_period: 5s
+    container_name: nba-scraperapi-deployed-dev
+    command: ["/app/start.sh"]
+    environment:
+    - APP_ENV=DEV
+    - DEPLOYED_FLAG=True
+    ports:
+      - "8000:8000"

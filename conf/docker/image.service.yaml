@@ -1,0 +1,8 @@
+version: '3.7'
+services:
+  nba-scraper-api:
+    build:
+      context: ../../
+      dockerfile: ./Dockerfile
+      target: application
+    image: nba-scraper-api
